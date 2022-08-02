@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Aoppart5chapter03cameraX">
         <activity
+            android:name=".ImageListActivity"
+            android:theme="@style/Theme.Design.NoActionBar"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

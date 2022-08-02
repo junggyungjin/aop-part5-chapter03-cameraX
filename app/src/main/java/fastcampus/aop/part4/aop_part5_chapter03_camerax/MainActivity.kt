@@ -142,6 +142,7 @@ class MainActivity : AppCompatActivity() {
                 bindCaptureListener()
                 bindZoomListener()
                 initFlashAndAddListener()
+                bindPreviewImageViewClickListener()
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -252,6 +253,14 @@ class MainActivity : AppCompatActivity() {
         val hasFlash = camera?.cameraInfo?.hasFlashUnit() ?: false
         if (hasFlash) {
             camera?.cameraControl?.enableTorch(light)
+        }
+    }
+
+    private fun bindPreviewImageViewClickListener() = with(binding) {
+        previewImageView.setOnClickListener {
+            startActivity(
+                ImageListActivity.newIntent(this@MainActivity, uriList)
+            )
         }
     }
 
